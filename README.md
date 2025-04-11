@@ -1,3 +1,5 @@
+MANUAL PROVISIONING
+
 ![image](https://github.com/user-attachments/assets/4f4e0960-7cc4-4692-ac01-8b82d173a3ef)# Project-1: Vprofile Project:Multi Tier Web Application Stack Setup Locally
 
 [*Project Source*](https://www.udemy.com/course/devopsprojects/?src=sac&kw=devops+projects)
