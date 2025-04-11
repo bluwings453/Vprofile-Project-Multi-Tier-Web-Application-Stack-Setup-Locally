@@ -1,8 +1,9 @@
-# Project-1: Vprofile Project:Multi Tier Web Application Stack Setup Locally
+![image](https://github.com/user-attachments/assets/4f4e0960-7cc4-4692-ac01-8b82d173a3ef)# Project-1: Vprofile Project:Multi Tier Web Application Stack Setup Locally
 
 [*Project Source*](https://www.udemy.com/course/devopsprojects/?src=sac&kw=devops+projects)
 
-![Project-Architecture](images/Multi_Tier_Web_Application_Stack_Setup_Locally.png)
+![image](https://github.com/user-attachments/assets/832733dc-cec4-489e-9b34-b24714e52d94)
+
 
 - We need to set up all these services in our virtual machines.
 - Web app is social networking site written by developers in Java language.
@@ -53,7 +54,8 @@ vagrant up
 PS: Bringing VMs can take long time sometimes. If VM setup stops in the middle, run `vagrant up` command again.
 
 - We can check our VMs from `Oracle VM VirtualBox Manager`.
-![](images/VMs-are-running-in-VirtualBox.png)
+![image](https://github.com/user-attachments/assets/1289c4d9-ccd8-45ea-a313-1a3d06375c0d)
+
 
 - Next we will validate our VMs one by one with command `vagrant ssh <name_of_VM_given_in_Vagrantfile>`
 ```sh
@@ -64,12 +66,14 @@ vagrant ssh web01
 ```sh
 cat /etc/hosts
 ```
-![](images/connected-web01-via-ssh.png)
+![image](https://github.com/user-attachments/assets/d6fbbc69-eb29-42e6-9478-383108bca333)
+
 - Now we will try to ping `app01` from `web01` vbox.
 ```sh
 ping app01
 ```
-![](images/pinging-app01-from-web01.png)
+![image](https://github.com/user-attachments/assets/026e48c2-ede6-470c-b806-e6827bb48698)
+
 
 - We are able to connect `app01` successfully. Now we will check other services similarly.
 ```sh
@@ -105,7 +109,8 @@ Indexing/Search service
 6. MySQL
 SQL Database
 ```
-![](images/Detailed-Architecture-of-VprofileProject.png)
+![image](https://github.com/user-attachments/assets/88d20b24-c44f-4b27-8996-b101d3e14a04)
+
 
 - We need to setup our services in below mentioned order.
 ```sh
@@ -199,7 +204,8 @@ Reload privilege tables now? [Y/n] Y
 mysql -u root -p
 exit
 ```
-![](images/connected-to-mariadb.png)
+![image](https://github.com/user-attachments/assets/a88c7566-0161-4c7a-843b-1e7f1c1db5da)
+
 - Next we will clone source code to database vm. And change directory to `src/main/resources/` to get the `sql queries.
 ```
 git clone https://github.com/hamidgokce/COURSE-PROJECTS--AWS-DEVOPS.git
@@ -266,7 +272,8 @@ memcached -p 11211 -U 11111 -u memcached -d
 ```sh
 ss -tunlp | grep 11211
 ``` 
-![](images/memcached-listening-on-tcp-11211.png)
+![image](https://github.com/user-attachments/assets/a4037318-c7a8-4d9f-8860-a39bc849f22f)
+
 - Everthing looks good, we can exit from server with `exit` command.
 
 ### Provisioning RabbitMQ
@@ -442,7 +449,8 @@ rabbitmq.password=test
 ```
 
 - Run `mvn install` command which will create our artifact. Our artifact will be created `/tmp/COURSE-PROJECTS--AWS-DEVOPS/Real_Time_DevOps_Project/Project-1_Multi Tier Web Application Stack Setup Locally/target/vprofile-v2.war`
-![](images/vprofile-v2.png)
+![image](https://github.com/user-attachments/assets/5a9d7e22-fc93-475c-9096-a6ad928dac9e)
+
 
 ```sh
 cd target/
@@ -516,32 +524,39 @@ enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 192.168.56.11
 ```
 - First validate Nginx is running on browser `http://<IP_of_Nginx_server>`.
-![](images/app-accessible-through-nginx-server.png)
+![image](https://github.com/user-attachments/assets/288e72b4-7be5-4650-a923-cc2076bfe89d)
+
 
 - Validate Db connection using credentials `admin_vp` for both username and password.
 
-![](images/login-successful.png)
+![image](https://github.com/user-attachments/assets/4165660b-23a8-4575-86bd-e76a4a4aab78)
+
 
 - If the logging is successfull, that means database db01 MySQL server is connected.
 - Validate app is running from Tomcat server
 
-![](images/db-connection-successful.png)
+![image](https://github.com/user-attachments/assets/7c8ad59c-821d-4202-b618-3849884699ff)
+
 
 - Validate RabbitMQ connection by clicking RabbitMQ
   
-![](images/rabbitMq-connection-successful.png)
+![image](https://github.com/user-attachments/assets/314c3f4b-174f-48da-b325-2aaed628b16a)
+
 
 - Validate Memcache connection by clicking MemCache
 
-![](images/memcached-connection-successful.png)
+![image](https://github.com/user-attachments/assets/b0c3c5f2-4384-4ee7-9596-a082b7fbf5af)
+
 
 - Validate data is coming from Database when user first time requests it.
 
-![](images/data-coming-from-db.png)
+![image](https://github.com/user-attachments/assets/420b5ce9-0c6d-495c-8685-aab86c6de94a)
+
 
 - Validate data is coming from Memcached when user second time requests it.
 
-![](images/data-coming-from-memcache.png)
+![image](https://github.com/user-attachments/assets/11f52ee6-3357-42be-81b5-07fa0c9ce3ca)
+
 
 ### CleanUp
 
@@ -549,12 +564,14 @@ enp0s8: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 ```sh
 vagrant destroy
 ```
-![](images/vagrant-destroy.png)
+![image](https://github.com/user-attachments/assets/396942ee-d264-48b6-b661-f89aea3478be)
+
 ![](images/vms-destroyed.png)
 
 - Check Oracle VM VirtualBox Manager if Vms are destroyed.
 
-![](images/vms-are-gone-after-vagrant-destroy.png)
+![image](https://github.com/user-attachments/assets/342ca561-cdeb-4762-8778-c17575ae6c4a)
+
 
 
 
